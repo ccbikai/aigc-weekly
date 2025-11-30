@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import React from 'react'
 import { ThemeProvider } from '@/components/theme/ThemeProvider'
 
@@ -20,6 +20,13 @@ export const metadata: Metadata = {
   icons: siteConfig.icons,
   metadataBase: siteConfig.metadataBase,
   alternates: siteConfig.alternates,
+}
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
 }
 
 export default async function RootLayout(props: { children: React.ReactNode }) {

@@ -148,4 +148,13 @@
   .menu--language-selector .menu__trigger {
     display: none;
   }
+
+  .menu--theme-selector.menu--desktop {
+    display: flex;
+  }
+
+  .menu--theme-selector .menu__dropdown {
+    left: auto;
+    right: 0;
+  }
 }
