@@ -2,6 +2,10 @@
   margin: 25px 0;
 }
 
+.index-content p {
+  white-space: pre-wrap;
+}
+
 .framed {
   border: 1px solid var(--accent);
   padding: 20px;

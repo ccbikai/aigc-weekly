@@ -1,6 +1,9 @@
 /* eslint-disable node/prefer-global/process */
 const title = 'Agili 的 AIGC 周刊'
-const description = '通过 Agentic AI Agent 生成的 AIGC 周刊，获取最新的 AIGC 资讯、工具和资源。'
+const description = `Agili 的 AIGC 周刊 是一份专注于人工智能生成内容（AIGC）领域的精选周刊。
+
+这里汇集了每周最新的 AI 进展、工具发现与深度观点，旨在为你提供高质量的行业洞察。`
+
 const keywords = ['AIGC', 'AI', '人工智能', '周刊', 'Agentic AI', '资讯', '工具', '资源']
 
 export const siteConfig = {

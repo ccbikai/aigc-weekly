@@ -29,12 +29,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
       <div className="index-content">
         <div className="framed">
           <p>
-            <strong>{siteConfig.title}</strong>
-            {' '}
-            是一份专注于人工智能生成内容（AIGC）领域的精选周刊。
-          </p>
-          <p>
-            这里汇集了每周最新的 AI 进展、工具发现与深度观点，旨在为你提供高质量的行业洞察。
+            { siteConfig.description }
           </p>
           <p>
             <a href={`${process.env.NEXT_PUBLIC_BASE_URL}/rss.xml`} rel="alternate" target="_blank">
