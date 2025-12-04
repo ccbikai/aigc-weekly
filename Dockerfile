@@ -31,7 +31,6 @@ COPY --from=build /app/dist /app/dist
 COPY --from=build /app/package.json /app/package.json
 
 COPY --from=build --chown=pn:pn /app/agent/.claude /home/pn/app/.claude
-COPY --from=build --chown=pn:pn /app/agent/CLAUDE.md /home/pn/app/CLAUDE.md
 
 # Clean up unnecessary files to reduce image size
 RUN find /app/node_modules -path '*claude-code-jetbrains-plugin*' -prune -exec rm -rf {} +

@@ -56,12 +56,14 @@ export const OvertypeFieldComponent: TextareaFieldClientComponent = (props) => {
 
     const [instance] = OverType.init(containerRef.current, {
       autoResize: true,
+      fontSize: '12px',
+      lineHeight: '20px',
+      padding: '8px 15px',
       minHeight: `${minHeight}px`,
       onChange: (val: string) => {
         setValue(val)
       },
       placeholder: typeof placeholder === 'string' ? placeholder : '',
-      showActiveLineRaw: true,
       showStats: true,
       theme: theme === 'dark' ? 'cave' : 'solar',
       toolbar: true,

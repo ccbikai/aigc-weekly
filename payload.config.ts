@@ -18,11 +18,12 @@ import { Weekly } from './collections/Weekly'
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
-const cloudflareRemoteBindings = process.env.NODE_ENV === 'production'
-const cloudflare
-  = process.argv.find(value => value.match(/^(generate|migrate):?/)) || !cloudflareRemoteBindings
-    ? await getCloudflareContextFromWrangler()
-    : await getCloudflareContext({ async: true })
+const isCLI = process.argv.some(value => value.match(/^(generate|migrate):?/))
+const isProduction = process.env.NODE_ENV === 'production'
+
+const cloudflare = isCLI || !isProduction
+  ? await getCloudflareContextFromWrangler()
+  : await getCloudflareContext({ async: true })
 
 export default buildConfig({
   admin: {
@@ -65,10 +66,10 @@ async function getCloudflareContextFromWrangler(): Promise<CloudflareContext> {
   const { getPlatformProxy } = await import(/* webpackIgnore: true */ `${'__wrangler'.replaceAll('_', '')}`)
   console.info('Getting Cloudflare context from Wrangler bindings', {
     environment: process.env.CLOUDFLARE_ENV,
-    remoteBindings: cloudflareRemoteBindings,
+    remoteBindings: isProduction,
   })
   return getPlatformProxy({
     environment: process.env.CLOUDFLARE_ENV,
-    remoteBindings: cloudflareRemoteBindings,
+    remoteBindings: isProduction,
   } satisfies GetPlatformProxyOptions)
 }
