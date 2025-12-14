@@ -5,7 +5,7 @@ description: 批量并发执行信息采集任务的技能。
 
 # Batch Research 技能指南
 
-此技能指导 Agent 如何高效、并发地从 [REFERENCE](./REFERENCE.md) 中定义的多个数据源采集信息。
+此技能指导 Agent 如何高效、并发地多个数据源采集信息。
 
 ## 核心原则
 
@@ -17,7 +17,7 @@ description: 批量并发执行信息采集任务的技能。
 
 ### 1. 准备阶段：解析与生成 URL
 
-首先读取 [REFERENCE](./REFERENCE.md)。对于其中的动态 URL 规则，你需要进行计算。
+首先遵循用户的需求。对于其中的动态 URL 规则，你需要进行计算。
 
 **Hacker News 处理示例**：
 

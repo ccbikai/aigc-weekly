@@ -21,11 +21,11 @@ description: 创建周刊
 2. **筛选信息 (Phase 2)**：
    - 调用 `editor` Agent。
    - 任务：对 `drafts` 中的内容进行筛选、去重和打分。
-   - 产出：`drafts.json` 高价值内容列表。
+   - 产出：`drafts.yaml` 高价值内容列表。
 
 3. **撰写内容 (Phase 3)**：
    - 调用 `writer` Agent。
-   - 任务：基于 `drafts.json` 撰写最终周刊。
+   - 任务：基于 `drafts.yaml` 撰写最终周刊。
    - 产出：最终的 Markdown 周刊文件。
 
 4. **审核与修订 (Phase 4)**：
